@@ -4,17 +4,21 @@ Guidance for using the EMODnet Seabed Habitats web services
 # EMODnet Seabed Habitats Web Mapping Services (WMS)
 EMODnet Seabed Habitats provides an [OGC Web Mapping Service](http://www.opengeospatial.org/standards/wms) for viewing habitat information on  desktop GIS, web portal or other clients.
 
-The feed is provided in two forms, a full verbose and hierarchical structure available at:
-http://213.122.160.75/scripts/mapserv.exe?map=D:/Websites/MESHAtlantic/map/MESHAtlanticWMS.map
+Due to the large volume of individual habitat survey maps and models, we have separate the OGC services into separate workspaces. 
 
-and a simplified structure (for simple clients and quick web interfaces) at:
-http://213.122.160.75/scripts/mapserv.exe?map=D:/Websites/MESHAtlantic/map/MESHAtlantic.map
+The WMS for the main EMODnet Seabed Habitats' data products is: 
+https://ows.emodnet-seabedhabitats.eu/emodnet_view/wms? 
 
-Both services provide the same data.
+This includes our main products including, but not limited to, EUSeaMap 2019, the OSPAR Threatened and Declining Habitats database, survey groundtruthing point data and our Essential Ocean Vairable composite products. 
+
+The WMS for all individual habitat maps and models is:
+https://ows.emodnet-seabedhabitats.eu/emodnet_view_maplibrary/wms?
+
+## Loading WMS data in GIS clients 
 
 The services can be accessed in your client by inputing the above addresses, though the method differs depending on the application.
 
-For information on how to connect to a WMS in QGIS, visit [Adding WMS Layers](http://maps.cga.harvard.edu/qgis/wkshop/wms.php "External Link: Adding WMS Layers on the Harvard University QGIS 2.0 workshop (opens in new window)") on the Harvard University QGIS 2.0 workshop.
+For information on how to connect to a WMS in QGIS, visit [Working with WMS Data](https://www.qgistutorials.com/en/docs/working_with_wms.html "External Link: Adding WMS Layers via QGIS Tutorials (opens in new window)") on the QGIS Tutorial website.
 
 For information on how to connect to a WMS in ArcMap, visit [Adding WMS services](http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#//00sp0000000s000000.htm "External Link: Adding WMS services on the ArcGIS Resource Center (opens in new window)") on the ArcGIS Resource Center.
 
@@ -29,7 +33,6 @@ Adding custom vendor paramters to WMS requests depends on the client/software be
 
 ### &HabCode=*[value]*
 Filter layer to show only records containing the described EUNIS Habitat code(s), even as a habitat mosaic.
-
 
 **Affects the following WMS layers:**
 
@@ -139,21 +142,21 @@ _Habitats directive habitat maps from survey_
     *	This will show only maps submitted by either Spanish or Greek organisations
 
 # EMODnet Seabed Habitats Web Feature Services (WFS)
-For machine-to-machine access to true spatial data, EMODnet Seabed Habitats provides an [OGC Web Feature Service](http://www.opengeospatial.org/standards/wfs) for compatible layers.
+For machine-to-machine access to true spatial vector data, EMODnet Seabed Habitats provides an [OGC Web Feature Service](http://www.opengeospatial.org/standards/wfs) for compatible layers.
 
-The service can be accessed via:
-http://213.122.160.75/scripts/mapserv.exe?map=D:/Websites/MESHAtlantic/map/EMODnetWFS.map&version=1.1.0
+As with the WMS workspaces, separate workspaces are provided for the WFS data.
 
+The WFS for the main EMODnet Seabed Habitats' data products is: 
+https://ows.emodnet-seabedhabitats.eu/emodnet_view/wfs? 
 
-**Currently the layers available through this service are as follows:**
+This includes our main products including, but not limited to, EUSeaMap 2019, the OSPAR Threatened and Declining Habitats database, survey groundtruthing point data and our Essential Ocean Vairable composite products. 
 
-_OSPAR reference dataset_
+The WFS for all individual habitat maps is:
+https://ows.emodnet-seabedhabitats.eu/emodnet_view_maplibrary/wfs?
 
-> OSPARHabPoints, OSPARhabPolygons
+Please note, that this workspace is habitat maps in vector format only. 
 
-More layers are added as the possibility arises. However, WFS is not the most efficient form of delivery for complex datasets, such as the habitat maps from survey datasets and EUSeaMap, due to the size of the downloads involved. These datasets are available to download as static download packages from the [EMODnet Seabed Habitats download page](http://www.emodnet-seabedhabitats.eu/download).
-
-Delivery of layers as WFS is constantly reviewed and layers will be made available if this option becomes possible
+It should be noted that WFS is not the most efficient form of delivery for complex datasets, (e.g. EUSeaMap 2019), due to the size of the downloads involved. These datasets are also available to download as static download packages from the [EMODnet Seabed Habitats download page](https://www.emodnet-seabedhabitats.eu/access-data/download-data/).
 
 **Notes on usage:**
-* Note that due to the layer's complexity, the OSPAR Polygons layer (OSPARhabPolygons) may take some time to load into your GIS.
+* Note that depending on a layer's complexity, it may take some time to load into your GIS or may time out. In the event of consistent time-outs, please download the corresponding static package.
